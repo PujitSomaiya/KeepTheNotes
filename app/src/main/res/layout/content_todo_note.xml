@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context=".TodoNoteActivity"
+        android:layout_marginTop="10dp"
+        tools:showIn="@layout/activity_add_update">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/sfpro_heavy"
+            android:hint="@string/title"
+            android:imeOptions="actionDone"
+            android:maxLength="100"
+            android:textColor="@color/white"
+            android:textColorHint="@color/color_third_929292"
+            android:textSize="23sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvLastUpdateDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:visibility="gone"
+            android:layout_marginRight="8dp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/sfpro_heavy"
+            android:hint="@string/title"
+            android:imeOptions="actionDone"
+            android:maxLength="100"
+            android:textColor="@color/white"
+            android:textColorHint="@color/color_sec_3B3B3B"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edTitle"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edDescription"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/sfpro_semibold"
+            android:gravity="top"
+            android:hint="Type something..."
+            android:imeOptions="actionDone"
+            android:textColor="@color/white"
+            android:textColorHint="@color/color_third_929292"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvLastUpdateDate" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
