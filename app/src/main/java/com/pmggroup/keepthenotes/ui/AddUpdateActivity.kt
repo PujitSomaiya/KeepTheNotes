@@ -1,4 +1,4 @@
-package com.pujit.keepthenotes.ui
+package com.pmggroup.keepthenotes.ui
 
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
@@ -21,10 +21,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.room.Room
-import com.pujit.keepthenotes.R
-import com.pujit.keepthenotes.database.EntryData
-import com.pujit.keepthenotes.database.MyDatabase
-import com.pujit.keepthenotes.databinding.ActivityAddUpdateBinding
+import com.pmggroup.keepthenotes.R
+import com.pmggroup.keepthenotes.database.EntryData
+import com.pmggroup.keepthenotes.database.MyDatabase
+import com.pmggroup.keepthenotes.databinding.ActivityAddUpdateBinding
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.Executors

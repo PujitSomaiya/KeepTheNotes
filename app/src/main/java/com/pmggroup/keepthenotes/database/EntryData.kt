@@ -1,4 +1,4 @@
-package com.pujit.keepthenotes.database
+package com.pmggroup.keepthenotes.database
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

@@ -1,4 +1,4 @@
-package com.pujit.keepthenotes.ui
+package com.pmggroup.keepthenotes.ui
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -8,27 +8,24 @@ import android.os.Bundle
 import android.preference.PreferenceManager
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.MenuItem
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.PopupMenu
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import androidx.room.Room
-import com.pujit.keepthenotes.R
-import com.pujit.keepthenotes.adapter.EntryViewAdapter
-import com.pujit.keepthenotes.database.EntryData
-import com.pujit.keepthenotes.database.MyDatabase
-import com.pujit.keepthenotes.databinding.ActivityEntryBinding
-import com.pujit.keepthenotes.interfaces.OnClickListener
+import com.pmggroup.keepthenotes.R
+import com.pmggroup.keepthenotes.adapter.EntryViewAdapter
+import com.pmggroup.keepthenotes.database.EntryData
+import com.pmggroup.keepthenotes.database.MyDatabase
+import com.pmggroup.keepthenotes.databinding.ActivityEntryBinding
+import com.pmggroup.keepthenotes.interfaces.OnClickListener
 
 
 class EntryActivity : AppCompatActivity(), OnClickListener {
@@ -244,16 +241,20 @@ class EntryActivity : AppCompatActivity(), OnClickListener {
 
         view.findViewById<View>(R.id.btnSubmit).setOnClickListener { //dismiss dialog
             edNewPasscode!!.error = null
-            if (edNewPasscode!!.text.toString().trim().length!=4){
-                edNewPasscode!!.error = "Please enter 4 digit passcode"
-            }else if (edNewPasscode!!.text.toString().trim().toInt()!=passcode){
-                edNewPasscode!!.error = "Wrong passcode"
-            }else{
-                show.dismiss()
-                binding.edSearch.text?.clear()
-                isSearching = false
-                resetHeader()
-                startActivity(Intent(this, NotesViewActivity::class.java).putExtra("id", entryData.entry_id))
+            when {
+                edNewPasscode!!.text.toString().trim().length!=4 -> {
+                    edNewPasscode!!.error = "Please enter 4 digit passcode"
+                }
+                edNewPasscode!!.text.toString().trim().toInt()!=passcode -> {
+                    edNewPasscode!!.error = "Wrong passcode"
+                }
+                else -> {
+                    show.dismiss()
+                    binding.edSearch.text?.clear()
+                    isSearching = false
+                    resetHeader()
+                    startActivity(Intent(this, NotesViewActivity::class.java).putExtra("id", entryData.entry_id))
+                }
             }
         }
         view.findViewById<View>(R.id.btnCancel).setOnClickListener { //dismiss dialog

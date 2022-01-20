@@ -1,4 +1,4 @@
-package com.pujit.keepthenotes.adapter
+package com.pmggroup.keepthenotes.adapter
 
 
 import android.annotation.SuppressLint
@@ -14,14 +14,12 @@ import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.pujit.keepthenotes.R
-import com.pujit.keepthenotes.database.EntryData
-import com.pujit.keepthenotes.database.MyDatabase
-import com.pujit.keepthenotes.databinding.ListitemEntryListBinding
-import com.pujit.keepthenotes.interfaces.OnClickListener
-import com.pujit.keepthenotes.ui.EntryActivity
-import java.text.ParseException
-import java.text.SimpleDateFormat
+import com.pmggroup.keepthenotes.R
+import com.pmggroup.keepthenotes.database.EntryData
+import com.pmggroup.keepthenotes.database.MyDatabase
+import com.pmggroup.keepthenotes.databinding.ListitemEntryListBinding
+import com.pmggroup.keepthenotes.interfaces.OnClickListener
+import com.pmggroup.keepthenotes.ui.EntryActivity
 import java.util.*
 import java.util.concurrent.Executors
 
@@ -39,7 +37,7 @@ class EntryViewAdapter(
     private var entryFilterList: ArrayList<EntryData> = ArrayList()
     private val context: EntryActivity= contextActivity
     private val database: MyDatabase = database
-    val mRandom: Random  =  Random(System.currentTimeMillis());
+    val mRandom: Random  =  Random(System.currentTimeMillis())
     val onClickListener: OnClickListener = onClickListener
     var isDarkTheme: Boolean = isDarkTheme
     private val TYPE_FULL = 0
@@ -168,11 +166,12 @@ class EntryViewAdapter(
             binding.imgDelete.setOnClickListener { openAlterDialog(position) }
             binding.tvEntryNumber.text = (position+1).toString()
             binding.tvLastUpdateDate.text = entryFilterList[position].lastUpdatedDate
-            if (entryFilterList[position].isPrivate){
+            /*if (entryFilterList[position].isPrivate){
                 binding.tvTitle.text = "Locked note"
             }else{
                 binding.tvTitle.text = entryFilterList[position].title
-            }
+            }*/
+            binding.tvTitle.text = entryFilterList[position].title
 
             binding.cardView.radius = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 5F, context.resources.displayMetrics)
         }
@@ -210,21 +209,29 @@ class EntryViewAdapter(
                 } else {
                     val resultList = ArrayList<EntryData>()
                     for (row in entry) {
-                        if (charSearch.toUpperCase(Locale.getDefault()).let {
-                                row.description?.toUpperCase(
+                        if (charSearch.uppercase(Locale.getDefault())
+                                .let {
+                                    row.title?.uppercase(Locale.getDefault())?.contains(it)!!
+                                }
+                        ) {
+                            /*if (!row.isPrivate)*/
+                                resultList.add(row)
+                        }
+                        /*if (charSearch.uppercase(Locale.getDefault()).let {
+                                row.description?.uppercase(
                                     Locale.getDefault()
                                 )?.contains(it)!!
                             }) {
                             if (!row.isPrivate)
                                 resultList.add(row)
-                        } else if (charSearch.toUpperCase(Locale.getDefault())
+                        } else if (charSearch.uppercase(Locale.getDefault())
                                 .let {
-                                    row.title?.toUpperCase(Locale.getDefault())?.contains(it)!!
+                                    row.title?.uppercase(Locale.getDefault())?.contains(it)!!
                                 }
                         ) {
                             if (!row.isPrivate)
                                 resultList.add(row)
-                        }
+                        }*/
                     }
 
                     resultList

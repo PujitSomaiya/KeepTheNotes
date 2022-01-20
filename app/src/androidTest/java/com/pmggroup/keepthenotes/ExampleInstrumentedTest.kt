@@ -1,4 +1,4 @@
-package com.pujit.keepthenotes
+package com.pmggroup.keepthenotes
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

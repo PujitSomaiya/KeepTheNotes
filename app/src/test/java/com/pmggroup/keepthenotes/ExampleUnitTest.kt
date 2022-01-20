@@ -1,4 +1,4 @@
-package com.pujit.keepthenotes
+package com.pmggroup.keepthenotes
 
 import org.junit.Test
 

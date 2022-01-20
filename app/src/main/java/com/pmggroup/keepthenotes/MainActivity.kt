@@ -1,11 +1,11 @@
-package com.pujit.keepthenotes
+package com.pmggroup.keepthenotes
 
 import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.content.ContextCompat
-import com.pujit.keepthenotes.ui.EntryActivity
+import com.pmggroup.keepthenotes.ui.EntryActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

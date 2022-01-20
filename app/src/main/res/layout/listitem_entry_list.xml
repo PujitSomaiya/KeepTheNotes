@@ -89,7 +89,7 @@
                             android:fontFamily="@font/sfpro_medium"
                             tools:text="May 25, 1999"
                             android:layout_weight="1"
-                            android:textSize="15sp"
+                            android:textSize="10sp"
                             android:textAllCaps="false"
                             android:alpha="0.5"
                             android:textColor="@android:color/black" />

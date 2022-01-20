@@ -1,10 +1,8 @@
-package com.pujit.keepthenotes.database
+package com.pmggroup.keepthenotes.database
 
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.pujit.keepthenotes.database.DaoAccess
-import com.pujit.keepthenotes.database.EntryData
 
 
 @Database(entities = [EntryData::class], version = 2, exportSchema = false)

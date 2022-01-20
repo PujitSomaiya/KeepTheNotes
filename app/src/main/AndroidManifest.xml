@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.pujit.keepthenotes">
+    package="com.pmggroup.keepthenotes">
 
     <application
         android:allowBackup="true"
@@ -11,18 +11,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KeepTheNotes"
         tools:replace="android:icon">
-        <activity android:name=".ui.NotesViewActivity"
+        <activity android:name="com.pmggroup.keepthenotes.ui.NotesViewActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".MainActivity">
+        <activity android:name="com.pmggroup.keepthenotes.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.EntryActivity"
+        <activity android:name="com.pmggroup.keepthenotes.ui.EntryActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".ui.AddUpdateActivity"
+        <activity android:name="com.pmggroup.keepthenotes.ui.AddUpdateActivity"
             android:screenOrientation="portrait"/>
     </application>
 

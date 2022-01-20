@@ -7,9 +7,12 @@
     <string name="debit">Debit</string>
     <string name="total">Total</string>
     <string name="add">Add</string>
-    <string name="no_entries_found">No notes added!!</string>
+    <string name="no_entries_found">No notes available!!</string>
     <string name="add_new_entry">Add new entry</string>
     <string name="update_new_entry">Update new entry</string>
     <string name="title">Title</string>
     <string name="no_search_result_found">No search result found for</string>
+    <string name="cancel">Cancel</string>
+    <string name="open">Open</string>
+    <string name="set">Set</string>
 </resources>

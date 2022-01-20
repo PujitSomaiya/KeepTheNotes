@@ -1,4 +1,4 @@
-package com.pujit.keepthenotes.interfaces
+package com.pmggroup.keepthenotes.interfaces
 
 
 interface OnClickListener {
